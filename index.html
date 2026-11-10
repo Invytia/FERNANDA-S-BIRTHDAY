@@ -111,6 +111,7 @@ body.content-active #main-invitation{display:flex}
 .map-box{width:100%;max-width:550px;height:320px;margin:30px auto;overflow:hidden;border-radius:10px;box-shadow:0 15px 40px rgba(0,0,0,.7);position:relative;z-index:2;border:1px solid rgba(246,201,211,.3)}
 .map-box iframe{width:100%;height:100%;border:none;filter:invert(85%) hue-rotate(160deg) contrast(1.2) sepia(20%)}
 
+.spotify-box{width:100%;max-width:500px;margin:10px auto;position:relative;z-index:2;border-radius:12px;overflow:hidden;box-shadow:0 15px 40px rgba(0,0,0,.7);border:1px solid rgba(246,201,211,.3)}
 /* Dress code */
 .swatches{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin-top:10px}
 .swatch{display:flex;flex-direction:column;align-items:center;gap:10px;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted)}
@@ -308,6 +309,19 @@ select.input-line option{background:#2a0a12;color:var(--text-light)}
     <div class="anim-element anim-fade-up delay-4 photo-frame" style="margin-top:70px">
       <img src="assets/8.jpg" alt="Momentos" onerror="this.style.display='none'">
     </div>
+  </section>
+
+  <!-- Playlist colaborativa -->
+  <section class="section-block bg-1">
+    <div class="anim-element anim-fade-up delay-1 info-title">Haz que suene</div>
+    <div class="anim-element anim-fade-up delay-2 info-data" style="font-size:34px">Nuestra Playlist</div>
+    <p class="anim-element anim-fade-up delay-3 body-serif" style="margin:25px auto;font-size:20px">
+      Ayúdame a armar la música de la noche. Escucha la playlist y agrega las canciones que no pueden faltar.
+    </p>
+    <div class="anim-element anim-zoom delay-4 spotify-box">
+      <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/3Dr7LwA453LjJrLoaXPV5c?utm_source=generator&si=a035cb606f0747e7" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </div>
+    <a href="https://open.spotify.com/playlist/3Dr7LwA453LjJrLoaXPV5c?si=518f8ea8434f425b&pt=6d0335406b509e797227161c3868ca3f" target="_blank" class="anim-element anim-fade-up delay-4 btn-solid">Agregar mis canciones</a>
   </section>
 
   <!-- RSVP + Pases + Muro de deseos -->
