@@ -41,10 +41,10 @@ body.content-active .sticky-music-btn{opacity:1;visibility:visible;transform:non
 .bow-divider span{flex:1;height:1px;background:linear-gradient(to right,transparent,var(--wine))}
 .bow-divider span:last-child{background:linear-gradient(to left,transparent,var(--wine))}
 .bow-divider svg{width:40px;height:24px;flex-shrink:0}
-.corner-bow{position:absolute;width:92px;height:66px;z-index:1;pointer-events:none;filter:drop-shadow(0 6px 10px rgba(94,7,24,.3))}
-.corner-bow.tl{top:22px;left:16px;transform:rotate(-16deg)}
-.corner-bow.tr{top:22px;right:16px;transform:rotate(16deg)}
-.hero-bow{width:210px;height:148px;margin:0 auto 6px;filter:drop-shadow(0 10px 18px rgba(94,7,24,.35))}
+.corner-bow{position:absolute;width:120px;height:auto;z-index:1;pointer-events:none;filter:drop-shadow(0 8px 12px rgba(94,7,24,.28))}
+.corner-bow.tl{top:14px;left:-8px;transform:rotate(-14deg)}
+.corner-bow.tr{top:14px;right:-8px;transform:rotate(14deg)}
+.hero-bow{display:block;width:320px;max-width:86vw;height:auto;margin:-50px auto 6px;filter:drop-shadow(0 14px 22px rgba(94,7,24,.35))}
 .heart-line{width:34px;height:34px;margin:6px auto 0;color:var(--wine)}
 
 /* Sobre */
@@ -61,7 +61,7 @@ body.content-active .sticky-music-btn{opacity:1;visibility:visible;transform:non
 .envelope::after{content:'';position:absolute;top:0;left:0;border-left:160px solid #FFF3F5;border-top:105px solid transparent;border-bottom:105px solid #FFF3F5;z-index:2}
 .front-flap{position:absolute;top:0;left:0;border-left:160px solid transparent;border-right:160px solid transparent;border-top:115px solid #F6D8DF;transform-origin:top;transition:transform .9s var(--ease);z-index:4;filter:drop-shadow(0 4px 6px rgba(0,0,0,.08))}
 .envelope-wrapper.open .front-flap{transform:rotateX(180deg);z-index:1}
-.bow{position:absolute;top:62px;left:50%;width:170px;height:120px;transform:translateX(-50%);z-index:6;transition:opacity .5s ease .1s,transform .6s ease;filter:drop-shadow(0 8px 14px rgba(94,7,24,.4))}
+.bow{position:absolute;top:38px;left:50%;width:210px;height:auto;transform:translateX(-50%);z-index:6;transition:opacity .5s ease .1s,transform .6s ease;filter:drop-shadow(0 10px 16px rgba(94,7,24,.4))}
 .envelope-wrapper.open .bow{opacity:0;transform:translateX(-50%) scale(.5) translateY(-20px);pointer-events:none}
 .hint-text{text-align:center;font-family:'Cinzel',serif;font-size:12px;text-transform:uppercase;letter-spacing:4px;color:var(--wine);margin-top:40px;animation:pulse 2.5s infinite;position:relative;z-index:10}
 .hint-text .bow-divider{margin:14px auto 0;max-width:150px}
@@ -152,12 +152,12 @@ select.input-line option{background:#FCE8ED;color:var(--text)}
   .section-block{padding:90px 15px}.info-data{font-size:30px}.dress-main{font-size:24px}
   .countdown-container{gap:9px}.time-box{min-width:62px;padding:12px 5px}.time-box span{font-size:28px}
   .map-box{height:260px}
-  .corner-bow{width:66px;height:48px}
-  .hero-bow{width:170px;height:120px}
+  .corner-bow{width:84px}
+  .hero-bow{width:260px}
   .envelope{width:300px;height:195px}
   .envelope::before,.envelope::after{border-left-width:150px;border-right-width:150px;border-top-width:97px;border-bottom-width:97px}
   .front-flap{border-left-width:150px;border-right-width:150px;border-top-width:105px}
-  .bow{width:150px;top:58px}
+  .bow{width:190px;top:36px}
 }
 </style>
 </head>
@@ -166,17 +166,6 @@ select.input-line option{background:#FCE8ED;color:var(--text)}
 <!-- Íconos reutilizables (moños) -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
-    <linearGradient id="rg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#B0173A"/><stop offset=".55" stop-color="#8A0F2A"/><stop offset="1" stop-color="#5E0718"/></linearGradient>
-    <symbol id="bow-satin" viewBox="0 0 200 140">
-      <path d="M92 72 L58 132 L80 124 L90 138 L104 80Z" fill="url(#rg)"/>
-      <path d="M108 72 L142 132 L120 124 L110 138 L96 80Z" fill="url(#rg)"/>
-      <path d="M100 66 C70 10 6 14 8 52 C10 88 70 84 100 66Z" fill="url(#rg)"/>
-      <path d="M100 66 C130 10 194 14 192 52 C190 88 130 84 100 66Z" fill="url(#rg)"/>
-      <path d="M96 66 C70 40 36 36 24 50" fill="none" stroke="#E2577A" stroke-width="3" stroke-linecap="round" opacity=".55"/>
-      <path d="M104 66 C130 40 164 36 176 50" fill="none" stroke="#E2577A" stroke-width="3" stroke-linecap="round" opacity=".55"/>
-      <rect x="84" y="50" width="32" height="34" rx="9" fill="#7A0D24"/>
-      <path d="M90 56 C98 52 106 52 110 56" fill="none" stroke="#E2577A" stroke-width="3" stroke-linecap="round" opacity=".6"/>
-    </symbol>
     <symbol id="bow-line" viewBox="0 0 48 28">
       <path d="M24 12 C18 3 6 2 5 9 C4 16 16 16 24 12Z M24 12 C30 3 42 2 43 9 C44 16 32 16 24 12Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
       <circle cx="24" cy="12" r="2.6" fill="currentColor"/>
@@ -203,7 +192,7 @@ select.input-line option{background:#FCE8ED;color:var(--text)}
   </div>
   <div class="envelope-wrapper" onclick="openEnvelope()">
     <div class="front-flap"></div>
-    <svg class="bow" aria-hidden="true"><use href="#bow-satin"/></svg>
+    <img class="bow" src="assets/mono.png" alt="" aria-hidden="true">
     <div class="envelope"></div>
   </div>
   <div class="hint-text">
@@ -217,7 +206,7 @@ select.input-line option{background:#FCE8ED;color:var(--text)}
 
   <!-- Portada -->
   <section class="section-block bg-1">
-    <svg class="anim-element anim-zoom delay-1 hero-bow" aria-hidden="true"><use href="#bow-satin"/></svg>
+    <img class="anim-element anim-zoom delay-1 hero-bow" src="assets/mono2.png" alt="" aria-hidden="true">
     <div class="anim-element anim-fade-up delay-1 tag-line">Mis 17 Años</div>
     <h1 class="anim-element anim-zoom anim-glow delay-2 title-script">Fernanda’s<br>Birthday</h1>
     <svg class="anim-element anim-fade-up delay-3 heart-line"><use href="#heart-line"/></svg>
@@ -229,7 +218,7 @@ select.input-line option{background:#FCE8ED;color:var(--text)}
 
   <!-- Mensaje especial -->
   <section class="section-block bg-2">
-    <svg class="corner-bow tr" aria-hidden="true"><use href="#bow-satin"/></svg>
+    <img class="corner-bow tr" src="assets/mono3.png" alt="" aria-hidden="true">
     <svg class="anim-element anim-zoom delay-1 heart-line" style="width:46px;height:46px;margin-bottom:20px"><use href="#heart-line"/></svg>
     <p class="anim-element anim-fade-up delay-2 body-serif" style="font-size:26px;line-height:1.8;padding:28px;border:1px solid var(--glass-border);border-radius:16px;background:var(--glass);backdrop-filter:blur(10px);box-shadow:0 10px 30px rgba(94,7,24,.15)">
       “Los mejores días se convierten en grandes recuerdos cuando se comparten con personas especiales. Me encantará contar con tu presencia.”
@@ -276,7 +265,7 @@ select.input-line option{background:#FCE8ED;color:var(--text)}
 
   <!-- Recepción -->
   <section class="section-block bg-2">
-    <svg class="corner-bow tl" aria-hidden="true"><use href="#bow-satin"/></svg>
+    <img class="corner-bow tl" src="assets/mono3.png" alt="" aria-hidden="true">
     <div class="anim-element anim-fade-up delay-1 info-title">Recepción</div>
     <div class="anim-element anim-fade-up delay-1 bow-divider"><span></span><svg><use href="#bow-line"/></svg><span></span></div>
     <div class="anim-element anim-fade-up delay-2 script-data">Quinta Elena</div>
@@ -307,7 +296,7 @@ select.input-line option{background:#FCE8ED;color:var(--text)}
 
   <!-- Dress code -->
   <section class="section-block bg-2">
-    <svg class="corner-bow tr" aria-hidden="true"><use href="#bow-satin"/></svg>
+    <img class="corner-bow tr" src="assets/mono3.png" alt="" aria-hidden="true">
     <div class="anim-element anim-fade-up delay-1 info-title">Dress Code</div>
     <div class="anim-element anim-fade-up delay-1 bow-divider"><span></span><svg><use href="#bow-line"/></svg><span></span></div>
     <div class="anim-element anim-fade-up delay-2 dress-main">ELEGANTE CASUAL</div>
@@ -349,7 +338,7 @@ select.input-line option{background:#FCE8ED;color:var(--text)}
 
   <!-- Playlist colaborativa -->
   <section class="section-block bg-2">
-    <svg class="corner-bow tl" aria-hidden="true"><use href="#bow-satin"/></svg>
+    <img class="corner-bow tl" src="assets/mono3.png" alt="" aria-hidden="true">
     <div class="anim-element anim-fade-up delay-1 info-title">Haz que suene</div>
     <div class="anim-element anim-fade-up delay-1 bow-divider"><span></span><svg><use href="#bow-line"/></svg><span></span></div>
     <div class="anim-element anim-fade-up delay-2 script-data">Nuestra Playlist</div>
@@ -367,7 +356,7 @@ select.input-line option{background:#FCE8ED;color:var(--text)}
     <div id="pases-section" style="display:none;width:100%">
       <div class="anim-element anim-fade-up delay-1 info-title">Tu Pase a mi Fiesta</div>
       <div class="anim-element anim-zoom delay-2 ticket-card">
-        <svg class="corner-bow tr" style="top:-22px;right:-14px" aria-hidden="true"><use href="#bow-satin"/></svg>
+        <img class="corner-bow tr" style="top:-22px;right:-14px" src="assets/mono3.png" alt="" aria-hidden="true">
         <div class="tag-line" style="margin-bottom:20px;font-size:13px">Invitación Especial</div>
         <div id="ticket-name" style="font-family:'Cormorant Garamond',serif;font-size:30px;color:var(--wine);font-style:italic;margin-bottom:15px;font-weight:500;line-height:1.2">Invitado Especial</div>
         <div class="body-serif" style="font-size:19px;margin-bottom:15px">Lugares Reservados</div>
